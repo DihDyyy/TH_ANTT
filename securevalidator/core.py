@@ -2,7 +2,7 @@
 
 def validate_email(email: str) -> bool:
     """Validate email format."""
-    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    pattern = r'^[\w-]+(?:\.[\w-]+)*@(?:[\w-]+\.)+\w+$'
     return re.fullmatch(pattern, email) is not None
 
 def validate_url(url: str) -> bool:
