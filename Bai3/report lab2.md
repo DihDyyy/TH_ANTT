@@ -24,7 +24,7 @@
 
 ## 🏗️ Cấu trúc thư mục dự án
 ```text
-lab 2/
+lab2/
 ├── images/                     # Ảnh chụp minh chứng các bước thực nghiệm Lab 2
 ├── modules/                    # Thư viện 7 module trinh sát lõi
 │   ├── port_scanner.py         # Quét cổng TCP bất đồng bộ (asyncio + Semaphore)
@@ -61,7 +61,8 @@ lab 2/
   ```
 - **Kết quả kỳ vọng:** Hiển thị thông tin phiên bản Nmap (ví dụ: `Starting Nmap 7.92...`).
 - **📸 Ảnh chụp màn hình Terminal:**
-  ![Bước 1: Kiểm tra cài đặt Nmap](lab 2/images/step1_nmap_version.png)
+
+  ![Bước 1: Kiểm tra cài đặt Nmap](lab2/images/step1_nmap_version.png)
 
 ---
 
@@ -76,7 +77,8 @@ lab 2/
     SMTP_PASS=jyuy phiw pkbf zmom
     ```
 - **📸 Ảnh chụp màn hình Google App Password & file .env:**
-  ![Bước 2: Tạo mật khẩu ứng dụng Google](lab 2/images/step2_app_password.png)
+
+  ![Bước 2: Tạo mật khẩu ứng dụng Google](lab2/images/step2_app_password.png)
 
 ---
 
@@ -84,12 +86,13 @@ lab 2/
 - **Mục đích:** Cài đặt các gói phụ thuộc: `flask`, `click`, `asyncio`, `python-dotenv`.
 - **Lệnh thực hiện trên Terminal:**
   ```cmd
-  cd "E:\Bai3\lab 2"
+  cd "E:\Bai3\lab2"
   pip install -r requirements.txt
   ```
 - **Kết quả:** Các thư viện được cài đặt thành công trong môi trường Python.
 - **📸 Ảnh chụp màn hình Terminal:**
-  ![Bước 3: Cài đặt thư viện requirements.txt](lab 2/images/step3_pip_install.png)
+
+  ![Bước 3: Cài đặt thư viện requirements.txt](lab2/images/step3_pip_install.png)
 
 ---
 
@@ -115,7 +118,8 @@ lab 2/
      python cli.py --target 127.0.0.1 --ports 22,80,443 --mode all
      ```
 - **📸 Ảnh chụp màn hình Terminal:**
-  ![Bước 4: Chạy kiểm thử NetRecon CLI](lab 2/images/step4_cli_test.png)
+
+  ![Bước 4: Chạy kiểm thử NetRecon CLI](lab2/images/step4_cli_test.png)
 
 ---
 
@@ -137,7 +141,8 @@ lab 2/
   * Running on http://127.0.0.1:5000
   ```
 - **📸 Ảnh chụp màn hình Terminal:**
-  ![Bước 5: Khởi động Flask Server](lab 2/images/step5_flask_start.png)
+
+  ![Bước 5: Khởi động Flask Server](lab2/images/step5_flask_start.png)
 
 ---
 
@@ -151,7 +156,8 @@ lab 2/
   - **Email nhận kết quả:** `dihdyyy@gmail.com`.
   - Bấm nút **Scan**.
 - **📸 Ảnh chụp màn hình Trình duyệt:**
-  ![Bước 6: Giao diện nhập thông số quét Web NetRecon](lab 2/images/step6_web_form.png)
+
+  ![Bước 6: Giao diện nhập thông số quét Web NetRecon](lab2/images/step6_web_form.png)
 
 ---
 
@@ -163,7 +169,8 @@ lab 2/
   - **Network Map:** Bảng ánh xạ địa chỉ IP và địa chỉ MAC vật lý từ lệnh ARP.
   - **Vulnerability Check:** Danh sách các mã lỗ hổng CVE cảnh báo đối với cổng tương ứng.
 - **📸 Ảnh chụp màn hình Trình duyệt:**
-  ![Bước 7: Kết quả trinh sát hiển thị trên giao diện Web](lab 2/images/step7_web_result.png)
+
+  ![Bước 7: Kết quả trinh sát hiển thị trên giao diện Web](lab2/images/step7_web_result.png)
 
 ---
 
@@ -174,7 +181,8 @@ lab 2/
   - Mở thư có tiêu đề: `Kết quả quét từ NetRecon [dihdyyy] - 127.0.0.1`.
   - Kiểm tra các mục: `--- SCAN ---`, `--- SERVICE ---`, `--- BANNER ---`, `--- MAP ---`, `--- VULN ---`.
 - **📸 Ảnh chụp màn hình Hộp thư Gmail:**
-  ![Bước 8: Email báo cáo kết quả quét NetRecon](lab 2/images/step8_email_received.png)
+
+  ![Bước 8: Email báo cáo kết quả quét NetRecon](lab2/images/step8_email_received.png)
 
 ---
 
@@ -187,7 +195,8 @@ lab 2/
   git push origin main
   ```
 - **📸 Ảnh chụp màn hình Git:**
-  ![Bước 9: Commit Git bài NetRecon](lab 2/images/step9_git_commit.png)
+
+  ![Bước 9: Commit Git bài NetRecon](lab2/images/step9_git_commit.png)
 
 ---
 

@@ -23,7 +23,7 @@
 
 ## 🏗️ Cấu trúc thư mục dự án
 ```text
-lab 1/
+lab1/
 ├── certs/                      # Thư mục lưu trữ bộ chứng chỉ số PKI
 │   ├── ca/                     # Root CA (ca.crt, ca.key, ca.srl.bak)
 │   ├── server/                 # Server Certificate (server.crt, server.key, server.csr)
@@ -54,7 +54,8 @@ lab 1/
   ```
 - **Kết quả kỳ vọng:** Hiển thị phiên bản OpenSSL (ví dụ: `OpenSSL 3.5.4` hoặc tương đương).
 - **📸 Ảnh chụp màn hình Terminal:**
-  ![Bước 1: Kiểm tra phiên bản OpenSSL](lab 1/images/step1_openssl_version.png)
+
+  ![Bước 1: Kiểm tra phiên bản OpenSSL](lab1/images/step1_openssl_version.png)
 
 ---
 
@@ -62,7 +63,7 @@ lab 1/
 - **Mục đích:** Tự động tạo khóa bí mật và chứng chỉ số cho Root CA, Server và Client theo cấu hình mở rộng `openssl.cnf` (`v3_ca`).
 - **Lệnh thực hiện trên Terminal:**
   ```cmd
-  cd "E:\Bai3\lab 1"
+  cd "E:\Bai3\lab1"
   make-certs.bat
   ```
 - **Kết quả nhận được:**
@@ -80,7 +81,8 @@ lab 1/
   ===============================
   ```
 - **📸 Ảnh chụp màn hình Terminal:**
-  ![Bước 2: Sinh chứng chỉ số bằng make-certs.bat](lab 1/images/step2_make_certs.png)
+
+  ![Bước 2: Sinh chứng chỉ số bằng make-certs.bat](lab1/images/step2_make_certs.png)
 
 ---
 
@@ -95,7 +97,8 @@ lab 1/
   2. `certs\server\server.crt`, `certs\server\server.key`, `certs\server\server.csr`
   3. `certs\client\client.crt`, `certs\client\client.key`, `certs\client\client.csr`
 - **📸 Ảnh chụp màn hình Terminal / VS Code:**
-  ![Bước 3: Cấu trúc thư mục certs](lab 1/images/step3_certs_dir.png)
+
+  ![Bước 3: Cấu trúc thư mục certs](lab1/images/step3_certs_dir.png)
 
 ---
 
@@ -111,7 +114,8 @@ lab 1/
   Decrypted: Kiem tra ma hoa AES-256
   ```
 - **📸 Ảnh chụp màn hình Terminal:**
-  ![Bước 4: Kiểm thử module AES](lab 1/images/step4_aes_test.png)
+
+  ![Bước 4: Kiểm thử module AES](lab1/images/step4_aes_test.png)
 
 ---
 
@@ -131,7 +135,8 @@ lab 1/
   Server listening on 127.0.0.1:8443
   ```
 - **📸 Ảnh chụp màn hình Terminal:**
-  ![Bước 5: Khởi động Server](lab 1/images/step5_server_start.png)
+
+  ![Bước 5: Khởi động Server](lab1/images/step5_server_start.png)
 
 ---
 
@@ -145,7 +150,8 @@ lab 1/
   - Nhập `Username: dihdyyy`
   - Gõ tin nhắn: `hello`
 - **📸 Ảnh chụp màn hình Terminal:**
-  ![Bước 6: Client 1 kết nối và gửi tin](lab 1/images/step6_client1_dihdyyy.png)
+
+  ![Bước 6: Client 1 kết nối và gửi tin](lab1/images/step6_client1_dihdyyy.png)
 
 ---
 
@@ -172,7 +178,8 @@ lab 1/
   - **Màn hình Client 1 (dihdyyy):** Nhận được các tin nhắn từ `duy`: `[duy]: hello`, `[duy]: anhon`.
   - **Màn hình Client 2 (duy):** Nhận được các tin nhắn từ `dihdyyy`: `[dihdyyy]: hello`.
 - **📸 Ảnh chụp màn hình cả 3 Terminal:**
-  ![Bước 7: Chat đa luồng giữa 2 client qua Server](lab 1/images/step7_client2_chat.png)
+
+  ![Bước 7: Chat đa luồng giữa 2 client qua Server](lab1/images/step7_client2_chat.png)
 
 ---
 
@@ -185,7 +192,8 @@ lab 1/
   git push origin main
   ```
 - **📸 Ảnh chụp màn hình Git:**
-  ![Bước 8: Commit Git bài SecureChat](lab 1/images/step8_git_commit.png)
+
+  ![Bước 8: Commit Git bài SecureChat](lab1/images/step8_git_commit.png)
 
 ---
 

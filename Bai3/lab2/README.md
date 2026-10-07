@@ -21,7 +21,7 @@
 
 ## 2. Cấu trúc thư mục
 ```text
-lab 2/
+lab2/
 ├── modules/                    # Thư viện module lõi
 │   ├── port_scanner.py         # Quét cổng TCP bất đồng bộ bằng asyncio
 │   ├── service_detector.py     # Nhận dạng dịch vụ với Nmap (nmap -sV)
@@ -167,7 +167,7 @@ cd "E:\Bai3\lab 2"
 ## 6. Ghi nhật ký (Logging)
 Mọi thao tác trinh sát (thời gian, địa chỉ IP, trạng thái cổng, banner) đều được ghi nhận vào tệp log:
 ```text
-lab 2/netrecon.log
+lab2/netrecon.log
 ```
 Mỗi dòng log có định dạng: `INFO:root:[YYYY-MM-DD HH:MM:SS] Nội dung ghi nhận`.
 

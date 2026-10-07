@@ -16,7 +16,7 @@
 
 ## 2. Cấu trúc thư mục
 ```text
-lab 1/
+lab1/
 ├── certs/                      # Thư mục lưu trữ bộ chứng chỉ số PKI
 │   ├── ca/                     # Root CA (ca.crt, ca.key)
 │   ├── server/                 # Server Certificate (server.crt, server.key)
