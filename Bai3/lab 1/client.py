@@ -1,0 +1,75 @@
+# -*- coding: utf-8 -*-
+"""
+SecureChat - Client Socket với mTLS và AES-256 E2EE
+Sinh viên thực hiện: Lê Đình Duy (MSSV: 2387700102 - Lớp: 23DATA1)
+Tài khoản / Username mặc định: dihdyyy
+"""
+import socket
+import ssl
+import threading
+import os
+import binascii
+from message_encryption import MessageEncryption
+
+SERVER_HOST = '127.0.0.1'
+SERVER_PORT = 8443
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CA_CERT = os.path.join(BASE_DIR, 'certs', 'ca', 'ca.crt')
+CLIENT_CERT = os.path.join(BASE_DIR, 'certs', 'client', 'client.crt')
+CLIENT_KEY = os.path.join(BASE_DIR, 'certs', 'client', 'client.key')
+
+def receive_messages(ssl_sock, me):
+    try:
+        while True:
+            enc_data = ssl_sock.recv(4096)
+            if not enc_data:
+                break
+            try:
+                msg = me.decrypt(enc_data)
+                print(f"\n{msg}", flush=True)
+            except Exception:
+                print("[!] Failed to decrypt message")
+    except Exception:
+        pass
+
+def main():
+    entered_user = input("Username (Enter để dùng mặc định 'dihdyyy'): ").strip()
+    username = entered_user if entered_user else "dihdyyy"
+    print(f"[*] Đăng nhập với tên người dùng: {username}")
+
+    # Khởi tạo key AES 256
+    aes_key = os.urandom(32)
+    me = MessageEncryption(aes_key)
+
+    context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH,
+                                         cafile=CA_CERT)
+    context.load_cert_chain(certfile=CLIENT_CERT, keyfile=CLIENT_KEY)
+    context.check_hostname = False
+    context.verify_mode = ssl.CERT_REQUIRED
+
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    ssl_sock = context.wrap_socket(sock, server_hostname=SERVER_HOST)
+    ssl_sock.connect((SERVER_HOST, SERVER_PORT))
+
+    # Gửi username + key hex cho server
+    ssl_sock.send(f"{username}:{binascii.hexlify(aes_key).decode()}".encode())
+
+    threading.Thread(target=receive_messages,
+                     args=(ssl_sock, me), daemon=True).start()
+
+    print("Type messages (type 'exit' to quit):")
+    while True:
+        try:
+            msg = input()
+            if msg.lower() == 'exit':
+                break
+            enc_msg = me.encrypt(msg)
+            ssl_sock.send(enc_msg)
+        except (KeyboardInterrupt, EOFError):
+            break
+
+    ssl_sock.close()
+
+if __name__ == '__main__':
+    main()
