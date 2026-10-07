@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="post" action="/scan" hx-post="/scan" hx-target="#results">
+    <label for="target">Target IP:</label>
+    <input type="text" id="target" name="target" value="127.0.0.1" required placeholder="ví dụ: 127.0.0.1"><br>
+    
+    <label for="ports">Ports (comma-separated):</label>
+    <input type="text" id="ports" name="ports" value="22,80,443"><br>
+    
+    <label for="mode">Mode:</label>
+    <select id="mode" name="mode">
+        <option value="all">All</option>
+        <option value="scan">Port Scan</option>
+        <option value="service">Service Detection</option>
+        <option value="banner">Banner Grab</option>
+        <option value="map">Network Map</option>
+        <option value="vuln">Vulnerability Check</option>
+    </select><br>
+    
+    <label for="email">Email nhận kết quả:</label>
+    <input type="email" id="email" name="email" value="dihdyyy@gmail.com" required placeholder="dihdyyy@gmail.com"><br>
+    
+    <button type="submit">Scan</button>
+</form>
+
+<div id="results">
+</div>
+{% endblock %}

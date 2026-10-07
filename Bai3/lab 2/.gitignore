@@ -1,0 +1,6 @@
+gitsecure.log
+certs/
+*.pem
+.env
+__pycache__/
+*.log
