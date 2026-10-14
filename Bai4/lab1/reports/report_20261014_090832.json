@@ -1,0 +1,44 @@
+{
+  "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+  "generated_at": "2026-10-14T02:08:32.821087+00:00",
+  "summary": {
+    "total_findings": 5,
+    "by_severity": {
+      "Info": 5
+    }
+  },
+  "findings": [
+    {
+      "type": "Request error",
+      "parameter": "cat",
+      "severity": "Info",
+      "evidence": "HTTPConnectionPool(host='testphp.vulnweb.com', port=80): Read timed out. (read timeout=8)",
+      "scanner": "XSS"
+    },
+    {
+      "type": "Request error",
+      "parameter": "cat",
+      "severity": "Info",
+      "evidence": "HTTPConnectionPool(host='testphp.vulnweb.com', port=80): Read timed out. (read timeout=8)",
+      "scanner": "SQLi"
+    },
+    {
+      "type": "Request error",
+      "severity": "Info",
+      "evidence": "HTTPConnectionPool(host='testphp.vulnweb.com', port=80): Read timed out. (read timeout=8)",
+      "scanner": "CSRF"
+    },
+    {
+      "type": "No obvious URL parameter",
+      "severity": "Info",
+      "evidence": "Không thấy tham số URL phổ biến trong query string.",
+      "scanner": "SSRF"
+    },
+    {
+      "type": "Request error",
+      "severity": "Info",
+      "evidence": "HTTPConnectionPool(host='testphp.vulnweb.com', port=80): Read timed out. (read timeout=8)",
+      "scanner": "SSRF"
+    }
+  ]
+}
