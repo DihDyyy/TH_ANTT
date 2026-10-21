@@ -1,0 +1,32 @@
+[
+  {
+    "type": "Use of eval",
+    "severity": "high",
+    "description": "Direct invocation of eval() allows arbitrary code execution"
+  },
+  {
+    "type": "Use of exec",
+    "severity": "high",
+    "description": "Direct invocation of exec() allows arbitrary statement execution"
+  },
+  {
+    "type": "Risky OS Command",
+    "severity": "high",
+    "description": "Spawning shell commands via os.system or subprocess without input validation"
+  },
+  {
+    "type": "Hardcoded Credential",
+    "severity": "medium",
+    "description": "Hard-coded credentials or secret tokens discovered in source code"
+  },
+  {
+    "type": "Pattern Match",
+    "severity": "medium",
+    "description": "Security anti-pattern identified through syntax or signature patterns"
+  },
+  {
+    "type": "Lint Issue",
+    "severity": "low",
+    "description": "Code style or static lint defect detected by flake8"
+  }
+]
