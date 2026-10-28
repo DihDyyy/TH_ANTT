@@ -1,0 +1,27 @@
+MODE: LOCAL BASH EXECUTION. NOT A REMOTE GITHUB ACTIONS OR GITLAB CI RUN.
+STUDENT: Lê Đình Duy | 2387700102 | 23DATA1
+PIPELINE: docusaurus
+JOB: build-job
+STAGE: build
+START: 2026-10-28T08:27:08.633+07:00
+END: 2026-10-28T08:27:14.242+07:00
+EXIT CODE: 0
+DURATION: 5.609 s
+GITLAB_USER_LOGIN=local-2387700102 (local test value)
+CI_COMMIT_BRANCH=main (local test value)
+
++ npm install --no-audit --no-fund --fetch-retries=0 --fetch-timeout=15000
+
+up to date in 2s
++ npm run build
+
+> lab06-devsecops-le-dinh-duy@1.0.0 build
+> docusaurus build
+
+[INFO] [vi] Creating an optimized production build...
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 559.14ms
+[webpackbar] ✔ Client: Compiled successfully in 609.19ms
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.

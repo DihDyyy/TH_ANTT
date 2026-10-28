@@ -1,0 +1,35 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Kết quả build Docusaurus và job pages thành công</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f5f8;color:#182536;font:18px 'Segoe UI',sans-serif}
+header{background:#143e3b;color:white;padding:30px 48px}header h1{margin:8px 0;font-size:32px}
+header p{margin:6px 0}.tag{display:inline-block;background:#e6b85b;color:#292410;padding:6px 12px;border-radius:5px;font-weight:700;font-size:14px;letter-spacing:.03em}
+main{padding:24px 48px}h2{margin:0 0 16px;font-size:24px}.card{padding:22px 24px;background:white;border:1px solid #d9e1e8;border-radius:10px;margin-bottom:18px}
+table{width:100%;border-collapse:collapse;font-size:17px}th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #e2e7ed}th{background:#f4f7fa}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#172431;color:#e7edf5;padding:20px;border-radius:7px;line-height:1.5;font:16px Consolas,'Courier New',monospace;margin:8px 0}
+.passed{color:#176247;font-weight:700}.failed{color:#ae2431;font-weight:700}.skipped{color:#7c6143;font-weight:700}
+.notice{border-left:5px solid #d7a43e;background:#fff9e9;padding:14px 18px;font-size:17px;line-height:1.5}
+.muted{color:#5c6b7b;font-size:15px}.flow{display:flex;gap:16px}.stage{flex:1;background:#edf4f1;padding:18px;border-radius:8px}.stage h3{margin-top:0}.job{background:white;padding:12px;margin-top:12px;border:1px solid #d8e3dd;border-radius:6px}
+footer{padding:12px 48px 24px;color:#5c6b7b;font-size:14px}
+</style><header><span class="tag">MINH CHỨNG CỤC BỘ · CHƯA CHẠY TRÊN CI ĐÁM MÂY</span>
+<h1>Kết quả build Docusaurus và job pages thành công</h1><p>Lê Đình Duy · MSSV 2387700102 · Lớp 23DATA1</p></header>
+<main>
+<section class="card"><table><tr><th>Job</th><th>Stage</th><th>Kết quả tại máy</th><th>Thời gian (giây)</th><th>Exit code</th></tr><tr><td>build-job</td><td>build</td><td class='passed'>PASSED</td><td>5.609</td><td>0</td></tr><tr><td>pages</td><td>deploy</td><td class='passed'>PASSED</td><td>0.13</td><td>0</td></tr></table><p class="muted">2026-10-28T08:27:08.633+07:00 · 5.94 giây</p></section>
+<section class="card"><h2>Log của build-job</h2><pre>+ npm install --no-audit --no-fund --fetch-retries=0 --fetch-timeout=15000
+
+up to date in 2s
++ npm run build
+
+&gt; lab06-devsecops-le-dinh-duy@1.0.0 build
+&gt; docusaurus build
+
+[INFO] [vi] Creating an optimized production build...
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 559.14ms
+[webpackbar] ✔ Client: Compiled successfully in 609.19ms
+[SUCCESS] Generated static files in &quot;build&quot;.
+[INFO] Use `npm run serve` command to test your build locally.
+</pre></section>
+<section class='card'><h2>Log của job pages</h2><pre>+ mv build/ public/
+</pre></section>
+<div class="notice">Job build hoàn thành cài dependencies và build Docusaurus thành công (exit code 0). Job pages chuyển thư mục build/ sang public/ để sẵn sàng xuất bản.</div></main><footer>Nguồn: tệp JSON / log thực thi trong thư mục evidence. Ảnh chụp bằng Microsoft Edge headless từ trang xem minh chứng cục bộ.</footer></html>

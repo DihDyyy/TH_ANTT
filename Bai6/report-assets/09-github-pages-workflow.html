@@ -1,0 +1,85 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Workflow build và triển khai GitHub Pages</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f5f8;color:#182536;font:18px 'Segoe UI',sans-serif}
+header{background:#143e3b;color:white;padding:30px 48px}header h1{margin:8px 0;font-size:32px}
+header p{margin:6px 0}.tag{display:inline-block;background:#e6b85b;color:#292410;padding:6px 12px;border-radius:5px;font-weight:700;font-size:14px;letter-spacing:.03em}
+main{padding:24px 48px}h2{margin:0 0 16px;font-size:24px}.card{padding:22px 24px;background:white;border:1px solid #d9e1e8;border-radius:10px;margin-bottom:18px}
+table{width:100%;border-collapse:collapse;font-size:17px}th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #e2e7ed}th{background:#f4f7fa}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#172431;color:#e7edf5;padding:20px;border-radius:7px;line-height:1.5;font:16px Consolas,'Courier New',monospace;margin:8px 0}
+.passed{color:#176247;font-weight:700}.failed{color:#ae2431;font-weight:700}.skipped{color:#7c6143;font-weight:700}
+.notice{border-left:5px solid #d7a43e;background:#fff9e9;padding:14px 18px;font-size:17px;line-height:1.5}
+.muted{color:#5c6b7b;font-size:15px}.flow{display:flex;gap:16px}.stage{flex:1;background:#edf4f1;padding:18px;border-radius:8px}.stage h3{margin-top:0}.job{background:white;padding:12px;margin-top:12px;border:1px solid #d8e3dd;border-radius:6px}
+footer{padding:12px 48px 24px;color:#5c6b7b;font-size:14px}
+</style><header><span class="tag">MINH CHỨNG CỤC BỘ · CHƯA CHẠY TRÊN CI ĐÁM MÂY</span>
+<h1>Workflow build và triển khai GitHub Pages</h1><p>Lê Đình Duy · MSSV 2387700102 · Lớp 23DATA1</p></header>
+<main>
+<section class="card"><p class="muted">Repo đích: DihDyyy/TH_ANTT · Vị trí: .github/workflows/bai6-pages.yml</p>
+<pre style="font-size:14px;line-height:1.35">name: Bai 6 - Docusaurus va GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - &#x27;.github/workflows/bai6-pages.yml&#x27;
+      - &#x27;Bai6/lab06-devsecops/**&#x27;
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bai6-github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: read
+    defaults:
+      run:
+        working-directory: Bai6/lab06-devsecops
+    steps:
+      - name: Lay ma nguon
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Chuan bi Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: &#x27;22&#x27;
+          package-manager-cache: false
+      - name: Doc cau hinh Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Cai dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build Docusaurus
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: npm run build
+      - name: Luu artifacts cua website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: Bai6/lab06-devsecops/build
+
+  deploy:
+    if: github.ref == &#x27;refs/heads/main&#x27;
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: build
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Trien khai GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+</pre></section>
+<div class="notice">Workflow đã được chuẩn bị và đọc YAML tại máy. Cần bật Pages với Source = GitHub Actions và chạy workflow trên GitHub để xác minh build, artifacts và deployment.</div></main><footer>Nguồn: tệp JSON / log thực thi trong thư mục evidence. Ảnh chụp bằng Microsoft Edge headless từ trang xem minh chứng cục bộ.</footer></html>

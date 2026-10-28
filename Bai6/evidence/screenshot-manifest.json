@@ -1,0 +1,68 @@
+[
+  {
+    "file": "report-assets/01-moi-truong.png",
+    "source_html": "report-assets/01-moi-truong.html",
+    "sha256": "205301ee300b57674c8a4d670a99ec25a3f4ea2fe02bbe6037ef8bb11b5e6afd",
+    "method": "Microsoft Edge headless screenshot of local evidence viewer"
+  },
+  {
+    "file": "report-assets/02-job-dau-tien.png",
+    "source_html": "report-assets/02-job-dau-tien.html",
+    "sha256": "4dfcc75020a1f07167bd0eac8de3795fc98bdea1cd1f564f3df3810a896fa102",
+    "method": "Microsoft Edge headless screenshot of local evidence viewer"
+  },
+  {
+    "file": "report-assets/03-pipeline-co-ban.png",
+    "source_html": "report-assets/03-pipeline-co-ban.html",
+    "sha256": "dff73438827c42a1d9eebb612cf4ac570a6679527f5783ace198254581ae264c",
+    "method": "Microsoft Edge headless screenshot of local evidence viewer"
+  },
+  {
+    "file": "report-assets/04-log-cac-job.png",
+    "source_html": "report-assets/04-log-cac-job.html",
+    "sha256": "f81cc255a4fba914a3671fc048e482026d4c6ac4b7fc5ec13248e581801a6278",
+    "method": "Microsoft Edge headless screenshot of local evidence viewer"
+  },
+  {
+    "file": "report-assets/05-cau-hinh-docusaurus.png",
+    "source_html": "report-assets/05-cau-hinh-docusaurus.html",
+    "sha256": "3e777845dd98e5a13915e5218494dae561d4870c6cf62e411cc0acfdcc2b77ba",
+    "method": "Microsoft Edge headless screenshot of local evidence viewer"
+  },
+  {
+    "file": "report-assets/06-build-thanh-cong.png",
+    "source_html": "report-assets/06-build-thanh-cong.html",
+    "sha256": "b78a8d6d0b88c0b5a733631097cac2c31d67ad5a7970c9830c6fb76fbfce5949",
+    "method": "Microsoft Edge headless screenshot of local evidence viewer"
+  },
+  {
+    "file": "report-assets/07-kiem-tra-cau-hinh.png",
+    "source_html": "report-assets/07-kiem-tra-cau-hinh.html",
+    "sha256": "10b744a8a60b464ab441f8da15c2c4101ea2c6bddce41cbda574ef58913efd9e",
+    "method": "Microsoft Edge headless screenshot of local evidence viewer"
+  },
+  {
+    "file": "report-assets/08-github-workflow-co-ban.png",
+    "source_html": "report-assets/08-github-workflow-co-ban.html",
+    "sha256": "62666306b7c478f1ebea61c7c0af033be91ba710e6367ed430f0956f2057f45b",
+    "method": "Microsoft Edge headless screenshot of local evidence viewer"
+  },
+  {
+    "file": "report-assets/09-github-pages-workflow.png",
+    "source_html": "report-assets/09-github-pages-workflow.html",
+    "sha256": "e6594c8cee02df5df48b3cccc8c036b048a7317ae5d107779dd5e2b87a838f99",
+    "method": "Microsoft Edge headless screenshot of local evidence viewer"
+  },
+  {
+    "file": "report-assets/10-docusaurus-trang-chu.png",
+    "source_html": "http://localhost:3000/lab06-devsecops/",
+    "sha256": "f828c3ed430d1b2077a5d9d83abb2acfa8a93c3523f78de0e537ba30978736d7",
+    "method": "Microsoft Edge headless screenshot of local running Docusaurus"
+  },
+  {
+    "file": "report-assets/11-docusaurus-tai-lieu.png",
+    "source_html": "http://localhost:3000/lab06-devsecops/docs/lab06/",
+    "sha256": "82b3521222dc8503bf204a177f94d5c250057a306333c2922f6b94c38f267338",
+    "method": "Microsoft Edge headless screenshot of local running Docusaurus"
+  }
+]

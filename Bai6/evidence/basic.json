@@ -1,0 +1,77 @@
+{
+  "name": "basic",
+  "source": "lab06-devsecops/examples/gitlab-ci-basic.yml",
+  "source_sha256": "449827ba5154ce225bb0dc192aded42ba7b822d4b4643d2576151d43e08ff8e1",
+  "mode": "local-bash-not-gitlab-runner",
+  "limitations": "No runner registration, container images, remote artifacts or GitLab Pages deployment are performed locally.",
+  "started_at": "2026-10-28T08:26:48.277+07:00",
+  "ended_at": "2026-10-28T08:27:08.631+07:00",
+  "duration_seconds": 20.354,
+  "stages": [
+    "build",
+    "test",
+    "deploy"
+  ],
+  "status": "passed",
+  "jobs": [
+    {
+      "name": "build-job",
+      "stage": "build",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "echo \"Hello, $GITLAB_USER_LOGIN!\""
+      ],
+      "started_at": "2026-10-28T08:26:48.277+07:00",
+      "ended_at": "2026-10-28T08:26:48.342+07:00",
+      "duration_seconds": 0.065,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ echo 'Hello, local-2387700102!'\nHello, local-2387700102!\n"
+    },
+    {
+      "name": "test-job1",
+      "stage": "test",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "echo \"This job tests something\""
+      ],
+      "started_at": "2026-10-28T08:26:48.345+07:00",
+      "ended_at": "2026-10-28T08:26:48.425+07:00",
+      "duration_seconds": 0.08,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ echo 'This job tests something'\nThis job tests something\n"
+    },
+    {
+      "name": "test-job2",
+      "stage": "test",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "echo \"This job tests something, but takes more time than test-job1.\"",
+        "echo \"After the echo commands complete, it runs the sleep command for 20 seconds\"",
+        "echo \"which simulates a test that runs 20 seconds longer than test-job1\"",
+        "sleep 20"
+      ],
+      "started_at": "2026-10-28T08:26:48.345+07:00",
+      "ended_at": "2026-10-28T08:27:08.569+07:00",
+      "duration_seconds": 20.224,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ echo 'This job tests something, but takes more time than test-job1.'\nThis job tests something, but takes more time than test-job1.\n+ echo 'After the echo commands complete, it runs the sleep command for 20 seconds'\nAfter the echo commands complete, it runs the sleep command for 20 seconds\n+ echo 'which simulates a test that runs 20 seconds longer than test-job1'\nwhich simulates a test that runs 20 seconds longer than test-job1\n+ sleep 20\n"
+    },
+    {
+      "name": "deploy-prod",
+      "stage": "deploy",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "echo \"This job deploys something from the $CI_COMMIT_BRANCH branch.\""
+      ],
+      "started_at": "2026-10-28T08:27:08.570+07:00",
+      "ended_at": "2026-10-28T08:27:08.630+07:00",
+      "duration_seconds": 0.06,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ echo 'This job deploys something from the main branch.'\nThis job deploys something from the main branch.\n"
+    }
+  ]
+}

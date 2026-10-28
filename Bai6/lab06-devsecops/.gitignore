@@ -1,0 +1,8 @@
+node_modules/
+.docusaurus/
+build/
+public/
+.npm-cache/
+.env
+.env.*
+!.env.example

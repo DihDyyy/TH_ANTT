@@ -1,0 +1,20 @@
+{
+  "captured_at": "2026-10-28T08:26:47.715+07:00",
+  "student": {
+    "name": "Lê Đình Duy",
+    "student_id": "2387700102",
+    "class": "23DATA1"
+  },
+  "os": "Windows-10-10.0.21996-SP0",
+  "workspace": "E:\\Bai6",
+  "versions": {
+    "python": "3.14.0",
+    "node": "v25.2.1",
+    "npm": "11.6.2",
+    "git": "git version 2.52.0.windows.1"
+  },
+  "gitlab_project_url": null,
+  "gitlab_pipeline_id": null,
+  "gitlab_pages_url": null,
+  "note": "Student details were read from LeDinhDuy2387700102.docx. Remote GitLab access has not been established."
+}

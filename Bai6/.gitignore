@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.npm-cache/
+node_modules/
+github-repo/
+report-assets/*profile*/
+report-assets/capture-test.*

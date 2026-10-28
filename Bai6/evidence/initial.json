@@ -1,0 +1,33 @@
+{
+  "name": "initial",
+  "source": "lab06-devsecops/examples/gitlab-ci-initial.yml",
+  "source_sha256": "6dcea4b16b0f0e186d898c1de75975c24b76cc83b5a245424eb0013fe1ad7f0d",
+  "mode": "local-bash-not-gitlab-runner",
+  "limitations": "No runner registration, container images, remote artifacts or GitLab Pages deployment are performed locally.",
+  "started_at": "2026-10-28T08:26:48.136+07:00",
+  "ended_at": "2026-10-28T08:26:48.275+07:00",
+  "duration_seconds": 0.139,
+  "stages": [
+    "build",
+    "test",
+    "deploy"
+  ],
+  "status": "passed",
+  "jobs": [
+    {
+      "name": "test-job",
+      "stage": "test",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "echo \"This is my first job!\"",
+        "date"
+      ],
+      "started_at": "2026-10-28T08:26:48.142+07:00",
+      "ended_at": "2026-10-28T08:26:48.274+07:00",
+      "duration_seconds": 0.133,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ echo 'This is my first job!'\nThis is my first job!\n+ date\nWed Oct 28 08:26:48 SEAST 2026\n"
+    }
+  ]
+}

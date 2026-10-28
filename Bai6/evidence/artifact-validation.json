@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "report": "REPORT_Bai6_LeDinhDuy_2387700102.md",
+  "local_link_count": 34,
+  "image_count": 11,
+  "images": [
+    {
+      "file": "report-assets/01-moi-truong.png",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "report-assets/02-job-dau-tien.png",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "report-assets/03-pipeline-co-ban.png",
+      "width": 1440,
+      "height": 1150
+    },
+    {
+      "file": "report-assets/04-log-cac-job.png",
+      "width": 1440,
+      "height": 1450
+    },
+    {
+      "file": "report-assets/05-cau-hinh-docusaurus.png",
+      "width": 1440,
+      "height": 1150
+    },
+    {
+      "file": "report-assets/06-build-thanh-cong.png",
+      "width": 1440,
+      "height": 1350
+    },
+    {
+      "file": "report-assets/07-kiem-tra-cau-hinh.png",
+      "width": 1440,
+      "height": 1060
+    },
+    {
+      "file": "report-assets/08-github-workflow-co-ban.png",
+      "width": 1440,
+      "height": 1640
+    },
+    {
+      "file": "report-assets/09-github-pages-workflow.png",
+      "width": 1440,
+      "height": 1890
+    },
+    {
+      "file": "report-assets/10-docusaurus-trang-chu.png",
+      "width": 1440,
+      "height": 960
+    },
+    {
+      "file": "report-assets/11-docusaurus-tai-lieu.png",
+      "width": 1440,
+      "height": 1100
+    }
+  ],
+  "execution_assertions": "Basic configurations passed locally, slept at least 20 seconds, ran tests concurrently and waited before deploy; Docusaurus build, artifact generation, and local website serve succeeded.",
+  "remote_verification": "Not performed: no GitHub Actions run ID or verified Pages URL."
+}

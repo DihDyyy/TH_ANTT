@@ -1,0 +1,7 @@
+[22060:21084:1028/080511.317:ERROR:components\os_crypt\async\browser\os_crypt_win.cc:63] Failed to encrypt: The system cannot find the file specified. (0x2)
+[22060:11504:1028/080511.340:ERROR:chrome\installer\util\google_update_settings_win.cc:544] Failed opening key Software\Microsoft\EdgeUpdate\ClientStateMedium\{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062} to set usagestats; result: 5
+[22060:11504:1028/080511.340:ERROR:chrome\installer\util\google_update_settings_win.cc:587] Failed opening key Software\Microsoft\EdgeUpdate\ClientStateMedium\{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062} to set urlstats; result: 5
+[22060:22064:1028/080511.396:ERROR:components\password_manager\core\browser\password_store\login_database_async_helper.cc:230] Encryption is not available.
+[22060:13184:1028/080511.397:ERROR:components\password_manager\core\browser\password_store\login_database_async_helper.cc:230] Encryption is not available.
+[22060:21844:1028/080511.489:ERROR:chrome\installer\util\google_update_settings_win.cc:544] Failed opening key Software\Microsoft\EdgeUpdate\ClientStateMedium\{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062} to set usagestats; result: 5
+99032 bytes written to file E:\Bai6\report-assets\06-build-bi-chan.png

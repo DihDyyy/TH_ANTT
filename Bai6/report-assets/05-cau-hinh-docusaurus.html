@@ -1,0 +1,46 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Cấu hình build Docusaurus và GitLab Pages</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f5f8;color:#182536;font:18px 'Segoe UI',sans-serif}
+header{background:#143e3b;color:white;padding:30px 48px}header h1{margin:8px 0;font-size:32px}
+header p{margin:6px 0}.tag{display:inline-block;background:#e6b85b;color:#292410;padding:6px 12px;border-radius:5px;font-weight:700;font-size:14px;letter-spacing:.03em}
+main{padding:24px 48px}h2{margin:0 0 16px;font-size:24px}.card{padding:22px 24px;background:white;border:1px solid #d9e1e8;border-radius:10px;margin-bottom:18px}
+table{width:100%;border-collapse:collapse;font-size:17px}th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #e2e7ed}th{background:#f4f7fa}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#172431;color:#e7edf5;padding:20px;border-radius:7px;line-height:1.5;font:16px Consolas,'Courier New',monospace;margin:8px 0}
+.passed{color:#176247;font-weight:700}.failed{color:#ae2431;font-weight:700}.skipped{color:#7c6143;font-weight:700}
+.notice{border-left:5px solid #d7a43e;background:#fff9e9;padding:14px 18px;font-size:17px;line-height:1.5}
+.muted{color:#5c6b7b;font-size:15px}.flow{display:flex;gap:16px}.stage{flex:1;background:#edf4f1;padding:18px;border-radius:8px}.stage h3{margin-top:0}.job{background:white;padding:12px;margin-top:12px;border:1px solid #d8e3dd;border-radius:6px}
+footer{padding:12px 48px 24px;color:#5c6b7b;font-size:14px}
+</style><header><span class="tag">MINH CHỨNG CỤC BỘ · CHƯA CHẠY TRÊN CI ĐÁM MÂY</span>
+<h1>Cấu hình build Docusaurus và GitLab Pages</h1><p>Lê Đình Duy · MSSV 2387700102 · Lớp 23DATA1</p></header>
+<main>
+<section class="card"><p class="muted">Tệp: lab06-devsecops/.gitlab-ci.yml</p><pre>stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+  image: node:22-bookworm-slim
+  script:
+    - npm install --no-audit --no-fund --fetch-retries=0 --fetch-timeout=15000
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 week
+
+pages:
+  stage: deploy
+  image: alpine:3.22
+  dependencies:
+    - build-job
+  script:
+    - mv build/ public/
+  pages:
+    publish: public
+  artifacts:
+    paths:
+      - public/
+  rules:
+    - if: &#x27;$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH&#x27;
+</pre></section>
+<div class="notice">YAML đã được phân tích cú pháp tại máy. Chưa chạy GitLab CI Lint. Khai báo pages.publish phục vụ GitLab hiện hành; chưa xác nhận triển khai thành công.</div></main><footer>Nguồn: tệp JSON / log thực thi trong thư mục evidence. Ảnh chụp bằng Microsoft Edge headless từ trang xem minh chứng cục bộ.</footer></html>

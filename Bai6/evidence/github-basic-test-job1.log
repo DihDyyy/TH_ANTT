@@ -1,0 +1,14 @@
+MODE: LOCAL BASH EXECUTION. NOT A REMOTE GITHUB ACTIONS OR GITLAB CI RUN.
+STUDENT: Lê Đình Duy | 2387700102 | 23DATA1
+PIPELINE: github-basic
+JOB: test-job1
+STAGE: test
+START: 2026-10-28T08:27:23.056+07:00
+END: 2026-10-28T08:27:23.100+07:00
+EXIT CODE: 0
+DURATION: 0.043 s
+GITLAB_USER_LOGIN=local-2387700102 (local test value)
+CI_COMMIT_BRANCH=main (local test value)
+
++ echo 'This job tests something'
+This job tests something

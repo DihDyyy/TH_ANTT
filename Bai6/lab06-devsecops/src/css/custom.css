@@ -1,0 +1,14 @@
+:root {
+  --ifm-color-primary: #1b6b55;
+  --ifm-color-primary-dark: #18604c;
+  --ifm-color-primary-darker: #175b48;
+  --ifm-color-primary-darkest: #134b3c;
+  --ifm-color-primary-light: #1e765e;
+  --ifm-color-primary-lighter: #1f7b62;
+  --ifm-color-primary-lightest: #238b6e;
+}
+.lab-hero {padding: 5rem 0;}
+.lab-eyebrow {letter-spacing: .12em; font-size: .85rem;}
+.lab-content {padding-top: 3rem; padding-bottom: 3rem;}
+.lab-card {height: 100%; border: 1px solid var(--ifm-color-emphasis-200);}
+.lab-note {margin-top: 2rem; color: var(--ifm-color-emphasis-700);}

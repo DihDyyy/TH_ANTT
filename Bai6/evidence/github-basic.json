@@ -1,0 +1,94 @@
+{
+  "name": "github-basic",
+  "source": "github-workflows/bai6-basic.yml",
+  "source_sha256": "1b642b369f2663708e5b841ca15813a27378452bed42067372487ccc8c161cd0",
+  "mode": "local-shell-execution-not-github-actions",
+  "workflow_name": "Bai 6 - Pipeline co ban",
+  "started_at": "2026-10-28T08:27:22.994+07:00",
+  "ended_at": "2026-10-28T08:27:43.187+07:00",
+  "duration_seconds": 20.193,
+  "status": "passed",
+  "dependency_waves": [
+    [
+      "build-job"
+    ],
+    [
+      "test-job1",
+      "test-job2"
+    ],
+    [
+      "deploy-prod"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "build-job",
+      "stage": "build",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "echo \"$STUDENT_NAME | $STUDENT_ID | $STUDENT_CLASS\"",
+        "echo \"Hello, $GITLAB_USER_LOGIN!\""
+      ],
+      "started_at": "2026-10-28T08:27:22.997+07:00",
+      "ended_at": "2026-10-28T08:27:23.055+07:00",
+      "duration_seconds": 0.058,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ echo 'Lê Đình Duy | 2387700102 | 23DATA1'\nLê Đình Duy | 2387700102 | 23DATA1\n+ echo 'Hello, local-2387700102!'\nHello, local-2387700102!\n",
+      "needs": []
+    },
+    {
+      "name": "test-job1",
+      "stage": "test",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "echo \"This job tests something\""
+      ],
+      "started_at": "2026-10-28T08:27:23.056+07:00",
+      "ended_at": "2026-10-28T08:27:23.100+07:00",
+      "duration_seconds": 0.043,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ echo 'This job tests something'\nThis job tests something\n",
+      "needs": [
+        "build-job"
+      ]
+    },
+    {
+      "name": "test-job2",
+      "stage": "test",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "echo \"This job tests something, but takes more time than test-job1.\"\necho \"After the echo commands complete, it runs the sleep command for 20 seconds\"\necho \"which simulates a test that runs 20 seconds longer than test-job1\"\nsleep 20\n"
+      ],
+      "started_at": "2026-10-28T08:27:23.057+07:00",
+      "ended_at": "2026-10-28T08:27:43.131+07:00",
+      "duration_seconds": 20.074,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ echo 'This job tests something, but takes more time than test-job1.'\nThis job tests something, but takes more time than test-job1.\n+ echo 'After the echo commands complete, it runs the sleep command for 20 seconds'\nAfter the echo commands complete, it runs the sleep command for 20 seconds\n+ echo 'which simulates a test that runs 20 seconds longer than test-job1'\nwhich simulates a test that runs 20 seconds longer than test-job1\n+ sleep 20\n",
+      "needs": [
+        "build-job"
+      ]
+    },
+    {
+      "name": "deploy-prod",
+      "stage": "deploy",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "echo \"This job deploys something from the $CI_COMMIT_BRANCH branch.\""
+      ],
+      "started_at": "2026-10-28T08:27:43.132+07:00",
+      "ended_at": "2026-10-28T08:27:43.186+07:00",
+      "duration_seconds": 0.054,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ echo 'This job deploys something from the main branch.'\nThis job deploys something from the main branch.\n",
+      "needs": [
+        "test-job1",
+        "test-job2"
+      ]
+    }
+  ],
+  "remote_run_id": null
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "file": "bai6-basic.yml",
+    "jobs": [
+      "build-job",
+      "test-job1",
+      "test-job2",
+      "deploy-prod"
+    ],
+    "status": "parsed locally"
+  },
+  {
+    "file": "bai6-pages.yml",
+    "jobs": [
+      "build",
+      "deploy"
+    ],
+    "status": "parsed locally"
+  }
+]

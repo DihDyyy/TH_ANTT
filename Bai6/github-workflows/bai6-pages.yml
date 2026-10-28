@@ -1,0 +1,69 @@
+name: Bai 6 - Docusaurus va GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bai6-pages.yml'
+      - 'Bai6/lab06-devsecops/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bai6-github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: read
+    defaults:
+      run:
+        working-directory: Bai6/lab06-devsecops
+    steps:
+      - name: Lay ma nguon
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Chuan bi Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Doc cau hinh Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        continue-on-error: true
+      - name: Cai dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build Docusaurus
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url != '' && steps.pages.outputs.base_url || 'https://dihdyyy.github.io/TH_ANTT/' }}
+        run: npm run build
+      - name: Luu artifacts cua website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: Bai6/lab06-devsecops/build
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: build
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Trien khai GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true

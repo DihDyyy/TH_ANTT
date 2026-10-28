@@ -1,0 +1,29 @@
+stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+  image: node:22-bookworm-slim
+  script:
+    - npm install --no-audit --no-fund --fetch-retries=0 --fetch-timeout=15000
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 week
+
+pages:
+  stage: deploy
+  image: alpine:3.22
+  dependencies:
+    - build-job
+  script:
+    - mv build/ public/
+  pages:
+    publish: public
+  artifacts:
+    paths:
+      - public/
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'

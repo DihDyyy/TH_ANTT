@@ -1,0 +1,245 @@
+{
+  "environment": {
+    "captured_at": "2026-10-28T08:26:47.715+07:00",
+    "student": {
+      "name": "Lê Đình Duy",
+      "student_id": "2387700102",
+      "class": "23DATA1"
+    },
+    "os": "Windows-10-10.0.21996-SP0",
+    "workspace": "E:\\Bai6",
+    "versions": {
+      "python": "3.14.0",
+      "node": "v25.2.1",
+      "npm": "11.6.2",
+      "git": "git version 2.52.0.windows.1"
+    },
+    "gitlab_project_url": null,
+    "gitlab_pipeline_id": null,
+    "gitlab_pages_url": null,
+    "note": "Student details were read from LeDinhDuy2387700102.docx. Remote GitLab access has not been established."
+  },
+  "configuration": {
+    "captured_at": "2026-10-28T08:26:48.135+07:00",
+    "status": "passed",
+    "scope": "Local YAML parsing and Node configuration evaluation; not GitLab CI Lint or a Docusaurus build.",
+    "yaml": [
+      {
+        "file": ".gitlab-ci.yml",
+        "status": "parsed",
+        "jobs": [
+          "build-job",
+          "pages"
+        ]
+      },
+      {
+        "file": "examples/gitlab-ci-basic.yml",
+        "status": "parsed",
+        "jobs": [
+          "build-job",
+          "test-job1",
+          "test-job2",
+          "deploy-prod"
+        ]
+      },
+      {
+        "file": "examples/gitlab-ci-initial.yml",
+        "status": "parsed",
+        "jobs": [
+          "test-job"
+        ]
+      },
+      {
+        "file": "examples/gitlab-ci-build-only.yml",
+        "status": "parsed",
+        "jobs": [
+          "build-job"
+        ]
+      }
+    ],
+    "url_probes": [
+      {
+        "input_url": "https://example.invalid/lab06-devsecops/",
+        "result": {
+          "url": "https://example.invalid",
+          "baseUrl": "/lab06-devsecops/",
+          "title": "Bài 6 — Bảo mật với DevSecOps"
+        }
+      },
+      {
+        "input_url": "https://sample.gitlab.io/lab06-devsecops/",
+        "result": {
+          "url": "https://sample.gitlab.io",
+          "baseUrl": "/lab06-devsecops/",
+          "title": "Bài 6 — Bảo mật với DevSecOps"
+        }
+      },
+      {
+        "input_url": "https://sample-123.gitlab.io/",
+        "result": {
+          "url": "https://sample-123.gitlab.io",
+          "baseUrl": "/",
+          "title": "Bài 6 — Bảo mật với DevSecOps"
+        }
+      }
+    ]
+  },
+  "pipelines": [
+    {
+      "name": "initial",
+      "source": "lab06-devsecops/examples/gitlab-ci-initial.yml",
+      "source_sha256": "6dcea4b16b0f0e186d898c1de75975c24b76cc83b5a245424eb0013fe1ad7f0d",
+      "mode": "local-bash-not-gitlab-runner",
+      "limitations": "No runner registration, container images, remote artifacts or GitLab Pages deployment are performed locally.",
+      "started_at": "2026-10-28T08:26:48.136+07:00",
+      "ended_at": "2026-10-28T08:26:48.275+07:00",
+      "duration_seconds": 0.139,
+      "stages": [
+        "build",
+        "test",
+        "deploy"
+      ],
+      "status": "passed",
+      "jobs": [
+        {
+          "name": "test-job",
+          "stage": "test",
+          "mode": "local-bash-not-gitlab-runner",
+          "commands": [
+            "echo \"This is my first job!\"",
+            "date"
+          ],
+          "started_at": "2026-10-28T08:26:48.142+07:00",
+          "ended_at": "2026-10-28T08:26:48.274+07:00",
+          "duration_seconds": 0.133,
+          "exit_code": 0,
+          "status": "passed",
+          "output": "+ echo 'This is my first job!'\nThis is my first job!\n+ date\nWed Oct 28 08:26:48 SEAST 2026\n"
+        }
+      ]
+    },
+    {
+      "name": "basic",
+      "source": "lab06-devsecops/examples/gitlab-ci-basic.yml",
+      "source_sha256": "449827ba5154ce225bb0dc192aded42ba7b822d4b4643d2576151d43e08ff8e1",
+      "mode": "local-bash-not-gitlab-runner",
+      "limitations": "No runner registration, container images, remote artifacts or GitLab Pages deployment are performed locally.",
+      "started_at": "2026-10-28T08:26:48.277+07:00",
+      "ended_at": "2026-10-28T08:27:08.631+07:00",
+      "duration_seconds": 20.354,
+      "stages": [
+        "build",
+        "test",
+        "deploy"
+      ],
+      "status": "passed",
+      "jobs": [
+        {
+          "name": "build-job",
+          "stage": "build",
+          "mode": "local-bash-not-gitlab-runner",
+          "commands": [
+            "echo \"Hello, $GITLAB_USER_LOGIN!\""
+          ],
+          "started_at": "2026-10-28T08:26:48.277+07:00",
+          "ended_at": "2026-10-28T08:26:48.342+07:00",
+          "duration_seconds": 0.065,
+          "exit_code": 0,
+          "status": "passed",
+          "output": "+ echo 'Hello, local-2387700102!'\nHello, local-2387700102!\n"
+        },
+        {
+          "name": "test-job1",
+          "stage": "test",
+          "mode": "local-bash-not-gitlab-runner",
+          "commands": [
+            "echo \"This job tests something\""
+          ],
+          "started_at": "2026-10-28T08:26:48.345+07:00",
+          "ended_at": "2026-10-28T08:26:48.425+07:00",
+          "duration_seconds": 0.08,
+          "exit_code": 0,
+          "status": "passed",
+          "output": "+ echo 'This job tests something'\nThis job tests something\n"
+        },
+        {
+          "name": "test-job2",
+          "stage": "test",
+          "mode": "local-bash-not-gitlab-runner",
+          "commands": [
+            "echo \"This job tests something, but takes more time than test-job1.\"",
+            "echo \"After the echo commands complete, it runs the sleep command for 20 seconds\"",
+            "echo \"which simulates a test that runs 20 seconds longer than test-job1\"",
+            "sleep 20"
+          ],
+          "started_at": "2026-10-28T08:26:48.345+07:00",
+          "ended_at": "2026-10-28T08:27:08.569+07:00",
+          "duration_seconds": 20.224,
+          "exit_code": 0,
+          "status": "passed",
+          "output": "+ echo 'This job tests something, but takes more time than test-job1.'\nThis job tests something, but takes more time than test-job1.\n+ echo 'After the echo commands complete, it runs the sleep command for 20 seconds'\nAfter the echo commands complete, it runs the sleep command for 20 seconds\n+ echo 'which simulates a test that runs 20 seconds longer than test-job1'\nwhich simulates a test that runs 20 seconds longer than test-job1\n+ sleep 20\n"
+        },
+        {
+          "name": "deploy-prod",
+          "stage": "deploy",
+          "mode": "local-bash-not-gitlab-runner",
+          "commands": [
+            "echo \"This job deploys something from the $CI_COMMIT_BRANCH branch.\""
+          ],
+          "started_at": "2026-10-28T08:27:08.570+07:00",
+          "ended_at": "2026-10-28T08:27:08.630+07:00",
+          "duration_seconds": 0.06,
+          "exit_code": 0,
+          "status": "passed",
+          "output": "+ echo 'This job deploys something from the main branch.'\nThis job deploys something from the main branch.\n"
+        }
+      ]
+    },
+    {
+      "name": "docusaurus",
+      "source": "lab06-devsecops/.gitlab-ci.yml",
+      "source_sha256": "d58f41f314415d34657e1a726855f302674795a75ab458ee7e5ea1dec02764f7",
+      "mode": "local-bash-not-gitlab-runner",
+      "limitations": "No runner registration, container images, remote artifacts or GitLab Pages deployment are performed locally.",
+      "started_at": "2026-10-28T08:27:08.633+07:00",
+      "ended_at": "2026-10-28T08:27:14.573+07:00",
+      "duration_seconds": 5.94,
+      "stages": [
+        "build",
+        "deploy"
+      ],
+      "status": "passed",
+      "jobs": [
+        {
+          "name": "build-job",
+          "stage": "build",
+          "mode": "local-bash-not-gitlab-runner",
+          "commands": [
+            "npm install --no-audit --no-fund --fetch-retries=0 --fetch-timeout=15000",
+            "npm run build"
+          ],
+          "started_at": "2026-10-28T08:27:08.633+07:00",
+          "ended_at": "2026-10-28T08:27:14.242+07:00",
+          "duration_seconds": 5.609,
+          "exit_code": 0,
+          "status": "passed",
+          "output": "+ npm install --no-audit --no-fund --fetch-retries=0 --fetch-timeout=15000\n\nup to date in 2s\n+ npm run build\n\n> lab06-devsecops-le-dinh-duy@1.0.0 build\n> docusaurus build\n\n[INFO] [vi] Creating an optimized production build...\n[webpackbar] ℹ Compiling Client\n[webpackbar] ℹ Compiling Server\n[webpackbar] ✔ Server: Compiled successfully in 559.14ms\n[webpackbar] ✔ Client: Compiled successfully in 609.19ms\n[SUCCESS] Generated static files in \"build\".\n[INFO] Use `npm run serve` command to test your build locally.\n"
+        },
+        {
+          "name": "pages",
+          "stage": "deploy",
+          "mode": "local-bash-not-gitlab-runner",
+          "commands": [
+            "mv build/ public/"
+          ],
+          "started_at": "2026-10-28T08:27:14.243+07:00",
+          "ended_at": "2026-10-28T08:27:14.374+07:00",
+          "duration_seconds": 0.13,
+          "exit_code": 0,
+          "status": "passed",
+          "output": "+ mv build/ public/\n"
+        }
+      ]
+    }
+  ]
+}

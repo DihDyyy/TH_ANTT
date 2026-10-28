@@ -1,0 +1,65 @@
+{
+  "captured_at": "2026-10-28T08:26:48.135+07:00",
+  "status": "passed",
+  "scope": "Local YAML parsing and Node configuration evaluation; not GitLab CI Lint or a Docusaurus build.",
+  "yaml": [
+    {
+      "file": ".gitlab-ci.yml",
+      "status": "parsed",
+      "jobs": [
+        "build-job",
+        "pages"
+      ]
+    },
+    {
+      "file": "examples/gitlab-ci-basic.yml",
+      "status": "parsed",
+      "jobs": [
+        "build-job",
+        "test-job1",
+        "test-job2",
+        "deploy-prod"
+      ]
+    },
+    {
+      "file": "examples/gitlab-ci-initial.yml",
+      "status": "parsed",
+      "jobs": [
+        "test-job"
+      ]
+    },
+    {
+      "file": "examples/gitlab-ci-build-only.yml",
+      "status": "parsed",
+      "jobs": [
+        "build-job"
+      ]
+    }
+  ],
+  "url_probes": [
+    {
+      "input_url": "https://example.invalid/lab06-devsecops/",
+      "result": {
+        "url": "https://example.invalid",
+        "baseUrl": "/lab06-devsecops/",
+        "title": "Bài 6 — Bảo mật với DevSecOps"
+      }
+    },
+    {
+      "input_url": "https://sample.gitlab.io/lab06-devsecops/",
+      "result": {
+        "url": "https://sample.gitlab.io",
+        "baseUrl": "/lab06-devsecops/",
+        "title": "Bài 6 — Bảo mật với DevSecOps"
+      }
+    },
+    {
+      "input_url": "https://sample-123.gitlab.io/",
+      "result": {
+        "url": "https://sample-123.gitlab.io",
+        "baseUrl": "/",
+        "title": "Bài 6 — Bảo mật với DevSecOps"
+      }
+    }
+  ]
+}

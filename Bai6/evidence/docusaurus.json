@@ -1,0 +1,46 @@
+{
+  "name": "docusaurus",
+  "source": "lab06-devsecops/.gitlab-ci.yml",
+  "source_sha256": "d58f41f314415d34657e1a726855f302674795a75ab458ee7e5ea1dec02764f7",
+  "mode": "local-bash-not-gitlab-runner",
+  "limitations": "No runner registration, container images, remote artifacts or GitLab Pages deployment are performed locally.",
+  "started_at": "2026-10-28T08:27:08.633+07:00",
+  "ended_at": "2026-10-28T08:27:14.573+07:00",
+  "duration_seconds": 5.94,
+  "stages": [
+    "build",
+    "deploy"
+  ],
+  "status": "passed",
+  "jobs": [
+    {
+      "name": "build-job",
+      "stage": "build",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "npm install --no-audit --no-fund --fetch-retries=0 --fetch-timeout=15000",
+        "npm run build"
+      ],
+      "started_at": "2026-10-28T08:27:08.633+07:00",
+      "ended_at": "2026-10-28T08:27:14.242+07:00",
+      "duration_seconds": 5.609,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ npm install --no-audit --no-fund --fetch-retries=0 --fetch-timeout=15000\n\nup to date in 2s\n+ npm run build\n\n> lab06-devsecops-le-dinh-duy@1.0.0 build\n> docusaurus build\n\n[INFO] [vi] Creating an optimized production build...\n[webpackbar] ℹ Compiling Client\n[webpackbar] ℹ Compiling Server\n[webpackbar] ✔ Server: Compiled successfully in 559.14ms\n[webpackbar] ✔ Client: Compiled successfully in 609.19ms\n[SUCCESS] Generated static files in \"build\".\n[INFO] Use `npm run serve` command to test your build locally.\n"
+    },
+    {
+      "name": "pages",
+      "stage": "deploy",
+      "mode": "local-bash-not-gitlab-runner",
+      "commands": [
+        "mv build/ public/"
+      ],
+      "started_at": "2026-10-28T08:27:14.243+07:00",
+      "ended_at": "2026-10-28T08:27:14.374+07:00",
+      "duration_seconds": 0.13,
+      "exit_code": 0,
+      "status": "passed",
+      "output": "+ mv build/ public/\n"
+    }
+  ]
+}

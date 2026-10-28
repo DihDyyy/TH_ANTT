@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.png binary
+# Captured output retains the whitespace produced by the commands.
+evidence/** -whitespace
+report-assets/*.html -whitespace

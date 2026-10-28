@@ -1,0 +1,19 @@
+MODE: LOCAL BASH EXECUTION. NOT A REMOTE GITHUB ACTIONS OR GITLAB CI RUN.
+STUDENT: Lê Đình Duy | 2387700102 | 23DATA1
+PIPELINE: github-basic
+JOB: test-job2
+STAGE: test
+START: 2026-10-28T08:27:23.057+07:00
+END: 2026-10-28T08:27:43.131+07:00
+EXIT CODE: 0
+DURATION: 20.074 s
+GITLAB_USER_LOGIN=local-2387700102 (local test value)
+CI_COMMIT_BRANCH=main (local test value)
+
++ echo 'This job tests something, but takes more time than test-job1.'
+This job tests something, but takes more time than test-job1.
++ echo 'After the echo commands complete, it runs the sleep command for 20 seconds'
+After the echo commands complete, it runs the sleep command for 20 seconds
++ echo 'which simulates a test that runs 20 seconds longer than test-job1'
+which simulates a test that runs 20 seconds longer than test-job1
++ sleep 20

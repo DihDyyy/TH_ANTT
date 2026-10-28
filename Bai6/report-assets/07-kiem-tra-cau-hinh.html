@@ -1,0 +1,18 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Kiểm tra cấu hình cục bộ</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f5f8;color:#182536;font:18px 'Segoe UI',sans-serif}
+header{background:#143e3b;color:white;padding:30px 48px}header h1{margin:8px 0;font-size:32px}
+header p{margin:6px 0}.tag{display:inline-block;background:#e6b85b;color:#292410;padding:6px 12px;border-radius:5px;font-weight:700;font-size:14px;letter-spacing:.03em}
+main{padding:24px 48px}h2{margin:0 0 16px;font-size:24px}.card{padding:22px 24px;background:white;border:1px solid #d9e1e8;border-radius:10px;margin-bottom:18px}
+table{width:100%;border-collapse:collapse;font-size:17px}th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #e2e7ed}th{background:#f4f7fa}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#172431;color:#e7edf5;padding:20px;border-radius:7px;line-height:1.5;font:16px Consolas,'Courier New',monospace;margin:8px 0}
+.passed{color:#176247;font-weight:700}.failed{color:#ae2431;font-weight:700}.skipped{color:#7c6143;font-weight:700}
+.notice{border-left:5px solid #d7a43e;background:#fff9e9;padding:14px 18px;font-size:17px;line-height:1.5}
+.muted{color:#5c6b7b;font-size:15px}.flow{display:flex;gap:16px}.stage{flex:1;background:#edf4f1;padding:18px;border-radius:8px}.stage h3{margin-top:0}.job{background:white;padding:12px;margin-top:12px;border:1px solid #d8e3dd;border-radius:6px}
+footer{padding:12px 48px 24px;color:#5c6b7b;font-size:14px}
+</style><header><span class="tag">MINH CHỨNG CỤC BỘ · CHƯA CHẠY TRÊN CI ĐÁM MÂY</span>
+<h1>Kiểm tra cấu hình cục bộ</h1><p>Lê Đình Duy · MSSV 2387700102 · Lớp 23DATA1</p></header>
+<main>
+<section class="card"><h2>Bốn cấu hình YAML</h2><table><tr><th>Tệp</th><th>Jobs</th><th>Kết quả</th></tr><tr><td>.gitlab-ci.yml</td><td>build-job, pages</td><td>Đã đọc YAML</td></tr><tr><td>examples/gitlab-ci-basic.yml</td><td>build-job, test-job1, test-job2, deploy-prod</td><td>Đã đọc YAML</td></tr><tr><td>examples/gitlab-ci-initial.yml</td><td>test-job</td><td>Đã đọc YAML</td></tr><tr><td>examples/gitlab-ci-build-only.yml</td><td>build-job</td><td>Đã đọc YAML</td></tr></table></section>
+<section class="card"><h2>Thử cách tách url và baseUrl bằng Node.js</h2><table><tr><th>URL đầu vào thử nghiệm</th><th>url</th><th>baseUrl</th></tr><tr><td>https://example.invalid/lab06-devsecops/</td><td>https://example.invalid</td><td>/lab06-devsecops/</td></tr><tr><td>https://sample.gitlab.io/lab06-devsecops/</td><td>https://sample.gitlab.io</td><td>/lab06-devsecops/</td></tr><tr><td>https://sample-123.gitlab.io/</td><td>https://sample-123.gitlab.io</td><td>/</td></tr></table></section>
+<div class="notice">Các tên miền sample và example.invalid là dữ liệu kiểm tra cấu hình, không phải URL đã triển khai. Kiểm tra này không thay thế build Docusaurus hoặc CI Lint.</div></main><footer>Nguồn: tệp JSON / log thực thi trong thư mục evidence. Ảnh chụp bằng Microsoft Edge headless từ trang xem minh chứng cục bộ.</footer></html>
